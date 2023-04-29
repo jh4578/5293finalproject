@@ -1,55 +1,43 @@
-# Markdown Files
+# Data Overview
 
-Whether you write your book's content in Jupyter Notebooks (`.ipynb`) or
-in regular markdown files (`.md`), you'll write in the same flavor of markdown
-called **MyST Markdown**.
-This is a simple file to help you get started and show off some syntax.
+## Data explainations
 
-## What is MyST?
+The data was retrieved from yahoo.finance.com and fred.stlouisfed.org. It has 14 columns, and this project will be focusing on Date, Open, Volume, CPI, core CPI, gdp, unemployment rate, m1, m2, and DFF. 
 
-MyST stands for "Markedly Structured Text". It
-is a slight variation on a flavor of markdown called "CommonMark" markdown,
-with small syntax extensions to allow you to write **roles** and **directives**
-in the Sphinx ecosystem.
+Here are the explanations for these variables:
 
-For more about MyST, see [the MyST Markdown Overview](https://jupyterbook.org/content/myst.html).
+1, Date: the date of the data, the first day of each month.
 
-## Sample Roles and Directives
+2, Open: the stock opening price.
 
-Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like functions, but written in a markup language. They both
-serve a similar purpose, but **roles are written in one line**, whereas
-**directives span many lines**. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.
+3, Volume: number of shares that are traded in each month.
 
-Here is a "note" directive:
+4, CPI: The Sticky Price Consumer Price Index (CPI) is calculated from a subset of goods and services included in the CPI that change price relatively infrequently. [1]
 
-```{note}
-Here is a note
-```
+5, Core CPI: The Consumer Price Index for All Urban Consumers: All Items (CPIAUCSL) is a price index of a basket of goods and services paid by urban consumers. Percent changes in the price index measure the inflation rate between any two time periods. [2]
 
-It will be rendered in a special box when you build your book.
+6, gdp: Gross domestic product, the featured measure of U.S. output, is the market value of the goods and services produced by labor and property located in the United States.[3]
 
-Here is an inline directive to refer to a document: {doc}`markdown-notebooks`.
+7, unemployment rate: The unemployment rate represents the number of unemployed as a percentage of the labor force. [4]
 
+8, m1: M1 consists of (1) currency outside the U.S. Treasury, Federal Reserve Banks, and the vaults of depository institutions; (2) demand deposits at commercial banks (excluding those amounts held by depository institutions, the U.S. government, and foreign banks and official institutions) less cash items in the process of collection and Federal Reserve float; and (3) other checkable deposits (OCDs), consisting of negotiable order of withdrawal, or NOW, and automatic transfer service, or ATS, accounts at depository institutions, share draft accounts at credit unions, and demand deposits at thrift institutions.[5]
 
-## Citations
+9, m2: M2 consists of M1 plus (1) savings deposits (including money market deposit accounts); (2) small-denomination time deposits (time deposits in amounts of less than $100,000) less individual retirement account (IRA) and Keogh balances at depository institutions; and (3) balances in retail money market funds (MMFs) less IRA and Keogh balances at MMFs. [6]
 
-You can also cite references that are stored in a `bibtex` file. For example,
-the following syntax: `` {cite}`holdgraf_evidence_2014` `` will render like
-this: {cite}`holdgraf_evidence_2014`.
+10, DFF: The federal funds rate is the interest rate at which depository institutions trade federal funds (balances held at Federal Reserve Banks) with each other overnight. [7]
 
-Moreover, you can insert a bibliography into your page with this syntax:
-The `{bibliography}` directive must be used for all the `{cite}` roles to
-render properly.
-For example, if the references for your book are stored in `references.bib`,
-then the bibliography is inserted with:
+## Reference
 
-```{bibliography}
-```
+[1].Federal Reserve Bank of Atlanta, Sticky Price Consumer Price Index less Food and Energy [CORESTICKM159SFRBATL], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CORESTICKM159SFRBATL, April 27, 2023.
 
-## Learn more
+[2].U.S. Bureau of Labor Statistics, Consumer Price Index for All Urban Consumers: All Items in U.S. City Average [CPIAUCSL], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CPIAUCSL, April 27, 2023.
 
-This is just a simple starter to get you started.
-You can learn a lot more at [jupyterbook.org](https://jupyterbook.org).
+[3].U.S. Bureau of Economic Analysis, Gross Domestic Product [GDP], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GDP, April 27, 2023.
+
+[4].U.S. Bureau of Labor Statistics, Unemployment Rate [UNRATE], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/UNRATE, April 27, 2023.
+
+[5].Board of Governors of the Federal Reserve System (US), M1 [WM1NS], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/WM1NS, April 27, 2023.
+
+[6].Board of Governors of the Federal Reserve System (US), M2 [WM2NS], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/WM2NS, April 27, 2023.
+
+[7].Board of Governors of the Federal Reserve System (US), Federal Funds Effective Rate [DFF], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/DFF, April 27, 2023.

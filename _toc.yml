@@ -4,5 +4,8 @@
 format: jb-book
 root: intro
 chapters:
-- file: RNN_update
+- file: markdown
+- file: LR
+- file: SARIMAX
 - file: LSTM_update
+- file: reflections

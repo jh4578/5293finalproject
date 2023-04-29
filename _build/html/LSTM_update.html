@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Model3 LSTM &#8212; My sample book</title>
+    <title>Model3 &#8212; Predicting Google Stock</title>
   
   
   
@@ -66,7 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'LSTM_update';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Model2 RNN" href="RNN_update.html" />
+    <link rel="next" title="Reflections" href="reflections.html" />
+    <link rel="prev" title="Model2" href="SARIMAX.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,8 +159,13 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="RNN_update.html">Model2 RNN</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Model3 LSTM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Data Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LR.html">Model1</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="SARIMAX.html">Model2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Model3</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="reflections.html">Reflections</a></li>
 </ul>
 
     </div>
@@ -214,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/jh4578/5293finalproject" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -231,7 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLSTM_update.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jh4578/5293finalproject/issues/new?title=Issue%20on%20page%20%2FLSTM_update.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,7 +336,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -341,11 +349,28 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Model3 LSTM</h1>
+    <h1>Model3</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Model3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-short-term-memory">Long Short-Term Memory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-interpretation">Model Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -355,8 +380,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="model3-lstm">
-<h1>Model3 LSTM<a class="headerlink" href="#model3-lstm" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="model3">
+<h1>Model3<a class="headerlink" href="#model3" title="Permalink to this heading">#</a></h1>
+<section id="long-short-term-memory">
+<h2>Long Short-Term Memory<a class="headerlink" href="#long-short-term-memory" title="Permalink to this heading">#</a></h2>
 <p>An LSTM (Long Short-Term Memory) is a type of artificial neural network that can remember patterns or sequences over a long period of time. Imagine you’re trying to understand a story that someone is telling you, word by word. To make sense of the story, you need to remember not just the current word but also the words that came before it. This is similar to what an LSTM does.</p>
 <p>Think of an LSTM as a series of connected “memory cells,” each cell responsible for remembering a part of the sequence. As information passes through these cells, they can “learn” which parts are important and should be remembered, and which parts can be forgotten. This is useful when dealing with data that has a time component, like speech, music, or a series of text messages.</p>
 <p><img alt="3" src="https://raw.githubusercontent.com/jh4578/5293finalproject/main/_build/html/_images/LSTM3.webp" /></p>
@@ -394,7 +421,7 @@ Finally, we are going to take the exam. In the exam, we need to grab specific kn
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jh4578/5293finalproject/main/GOOG.csv&#39;</span><span class="p">,</span><span class="n">date_parser</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jh4578/5293finalproject/main/GOOG_update.csv&#39;</span><span class="p">,</span><span class="n">date_parser</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -402,7 +429,7 @@ Finally, we are going to take the exam. In the exam, we need to grab specific kn
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span>
-<span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span><span class="s1">&#39;Volume&#39;</span><span class="p">],</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span><span class="s1">&#39;High&#39;</span><span class="p">,</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span><span class="s1">&#39;Adj Close&#39;</span><span class="p">],</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -415,7 +442,7 @@ Finally, we are going to take the exam. In the exam, we need to grab specific kn
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-34496af5-77b8-4275-b045-a90d9e6a7968">
+  <div id="df-a34f84c8-1b65-4b8a-85f8-ecb2961d5194">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -436,13 +463,21 @@ Finally, we are going to take the exam. In the exam, we need to grab specific kn
     <tr style="text-align: right;">
       <th></th>
       <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Adj Close</th>
+      <th>Volume</th>
+      <th>CPI</th>
+      <th>Core CPI</th>
+      <th>gdp</th>
+      <th>Unemployment_rate</th>
+      <th>m1</th>
+      <th>DFF</th>
+      <th>M2</th>
     </tr>
     <tr>
       <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -452,49 +487,69 @@ Finally, we are going to take the exam. In the exam, we need to grab specific kn
   </thead>
   <tbody>
     <tr>
-      <th>2004-08-19</th>
-      <td>2.490664</td>
-      <td>2.591785</td>
-      <td>2.390042</td>
-      <td>2.499133</td>
-      <td>2.499133</td>
+      <th>2004-09-01</th>
+      <td>2.557912</td>
+      <td>4270113667</td>
+      <td>2.240201</td>
+      <td>197.5</td>
+      <td>12305.307</td>
+      <td>5.4</td>
+      <td>1343.475</td>
+      <td>1.605000</td>
+      <td>6337.150</td>
     </tr>
     <tr>
-      <th>2004-08-20</th>
-      <td>2.515820</td>
-      <td>2.716817</td>
-      <td>2.503118</td>
-      <td>2.697639</td>
-      <td>2.697639</td>
+      <th>2004-10-01</th>
+      <td>3.257789</td>
+      <td>10321258145</td>
+      <td>2.237219</td>
+      <td>197.9</td>
+      <td>12305.307</td>
+      <td>5.5</td>
+      <td>1348.975</td>
+      <td>1.760968</td>
+      <td>6351.475</td>
     </tr>
     <tr>
-      <th>2004-08-23</th>
-      <td>2.758411</td>
-      <td>2.826406</td>
-      <td>2.716070</td>
-      <td>2.724787</td>
-      <td>2.724787</td>
+      <th>2004-11-01</th>
+      <td>4.820681</td>
+      <td>11145383635</td>
+      <td>2.301213</td>
+      <td>198.3</td>
+      <td>12305.307</td>
+      <td>5.4</td>
+      <td>1373.940</td>
+      <td>1.932000</td>
+      <td>6395.220</td>
     </tr>
     <tr>
-      <th>2004-08-24</th>
-      <td>2.770615</td>
-      <td>2.779581</td>
-      <td>2.579581</td>
-      <td>2.611960</td>
-      <td>2.611960</td>
+      <th>2004-12-01</th>
+      <td>4.531764</td>
+      <td>5835483147</td>
+      <td>2.313886</td>
+      <td>198.6</td>
+      <td>12527.214</td>
+      <td>5.4</td>
+      <td>1390.450</td>
+      <td>2.156129</td>
+      <td>6448.450</td>
     </tr>
     <tr>
-      <th>2004-08-25</th>
-      <td>2.614201</td>
-      <td>2.689918</td>
-      <td>2.587302</td>
-      <td>2.640104</td>
-      <td>2.640104</td>
+      <th>2005-01-01</th>
+      <td>4.916571</td>
+      <td>8237356337</td>
+      <td>2.315890</td>
+      <td>199.0</td>
+      <td>12527.214</td>
+      <td>5.3</td>
+      <td>1374.700</td>
+      <td>2.279355</td>
+      <td>6407.200</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-34496af5-77b8-4275-b045-a90d9e6a7968')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a34f84c8-1b65-4b8a-85f8-ecb2961d5194')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -545,12 +600,12 @@ Finally, we are going to take the exam. In the exam, we need to grab specific kn
 
       <script>
         const buttonEl =
-          document.querySelector('#df-34496af5-77b8-4275-b045-a90d9e6a7968 button.colab-df-convert');
+          document.querySelector('#df-a34f84c8-1b65-4b8a-85f8-ecb2961d5194 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-34496af5-77b8-4275-b045-a90d9e6a7968');
+          const element = document.querySelector('#df-a34f84c8-1b65-4b8a-85f8-ecb2961d5194');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -571,76 +626,104 @@ Finally, we are going to take the exam. In the exam, we need to grab specific kn
   </div>
   </div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[:</span><span class="s1">&#39;2019&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2.490664],
-       [ 2.51582 ],
-       [ 2.758411],
-       ...,
-       [50.857498],
-       [52.480999],
-       [52.548   ]])
-</pre></div>
-</div>
-</div>
-</div>
 <p>Here we define a function organize train and test data set. We will use the data from 2004 to 2019 to train the model and the other used for test.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time_step_in</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">time_step_out</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="c1"># Split training and testing data</span>
-<span class="n">data_train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="s1">&#39;2019&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">data_test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;2019&#39;</span><span class="p">:]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-<span class="n">data_value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-
-<span class="c1"># Scale the data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
-<span class="n">sc</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="n">data_sc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_value</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">LSTM</span><span class="p">,</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">data_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
-<span class="c1"># Create X_train and y_train </span>
-<span class="n">X_train</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">y_train</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">time_step_in</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">data_train</span><span class="p">)</span> <span class="o">-</span> <span class="n">time_step_out</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-  <span class="n">X_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_sc</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">time_step_in</span><span class="p">:</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-  <span class="n">y_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_sc</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">time_step_out</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1"># Define the lookback period and split the data into train and test sets</span>
+<span class="n">lookback</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">train_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.7713004484304933</span><span class="p">)</span>
+<span class="n">train_data</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[:</span><span class="n">train_size</span><span class="p">]</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">data_scaled</span><span class="p">[</span><span class="n">train_size</span> <span class="o">-</span> <span class="n">lookback</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_sequences</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">lookback</span><span class="p">):</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lookback</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+        <span class="n">X</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">lookback</span><span class="p">:</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">Y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
 
+<span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span> <span class="o">=</span> <span class="n">create_sequences</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">lookback</span><span class="p">)</span>
+<span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">create_sequences</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">lookback</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the LSTM model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">LSTM</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">lookback</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">])</span>
 
-<span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
-<span class="c1"># We can take a look at the X_train and y_train</span>
-<span class="c1">#print(pd.concat([pd.DataFrame(X_train),pd.DataFrame(y_train)],axis = 1))</span>
+<span class="c1"># Compile the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">),</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
 
-<span class="n">X_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># Train the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">mean_absolute_error</span>
+<span class="c1"># Make predictions</span>
+<span class="n">Y_train_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">Y_test_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="n">X_test</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="c1"># Create X_test</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_train</span><span class="p">)</span> <span class="o">-</span> <span class="n">time_step_out</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_sc</span><span class="p">)</span> <span class="o">-</span> <span class="n">time_step_out</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">):</span>
-  <span class="n">X_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_sc</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">time_step_in</span><span class="p">:</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># Invert the normalization</span>
+<span class="n">Y_train_pred</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">Y_train_pred</span><span class="p">,</span> <span class="n">train_data</span><span class="p">[</span><span class="n">lookback</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:]]))[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">Y_test_pred</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">Y_test_pred</span><span class="p">,</span> <span class="n">test_data</span><span class="p">[</span><span class="n">lookback</span><span class="p">:,</span> <span class="mi">1</span><span class="p">:]]))[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">Y_train_actual</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="n">lookback</span><span class="p">:])[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">Y_test_actual</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">test_data</span><span class="p">[</span><span class="n">lookback</span><span class="p">:])[:,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Calculate the Mean Squared Error (MSE)</span>
+<span class="n">mse_train</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">Y_train_actual</span><span class="p">,</span> <span class="n">Y_train_pred</span><span class="p">)</span>
+<span class="n">mse_test</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">Y_test_actual</span><span class="p">,</span> <span class="n">Y_test_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Train MSE: </span><span class="si">{</span><span class="n">mse_train</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test MSE: </span><span class="si">{</span><span class="n">mse_test</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate the Mean Absolute Error (MAE)</span>
+<span class="n">mae_train</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">Y_train_actual</span><span class="p">,</span> <span class="n">Y_train_pred</span><span class="p">)</span>
+<span class="n">mae_test</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">Y_test_actual</span><span class="p">,</span> <span class="n">Y_test_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Train MAE: </span><span class="si">{</span><span class="n">mae_train</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test MAE: </span><span class="si">{</span><span class="n">mae_test</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.32952688 0.32421874 0.32327155 0.30941549 0.31447262]
- [0.32421874 0.32327155 0.30941549 0.31447262 0.32389072]
- [0.32327155 0.30941549 0.31447262 0.32389072 0.33475804]
- ...
- [0.69226473 0.69126067 0.6884493  0.67291979 0.67104555]
- [0.69126067 0.6884493  0.67291979 0.67104555 0.66247755]
- [0.6884493  0.67291979 0.67104555 0.66247755 0.66428484]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6/6 [==============================] - 0s 5ms/step
+2/2 [==============================] - 0s 5ms/step
+Train MSE: 3.5094
+Test MSE: 374.8578
+Train MAE: 1.3293
+Test MAE: 14.6765
 </pre></div>
 </div>
 </div>
 </div>
+<p>Here both the MSE and MAE for both training data and testing data are smaller than the MSE of the other two models, which indicates a better of fit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">actual_pred_plot</span><span class="p">(</span><span class="n">preds</span><span class="p">):</span>
@@ -653,100 +736,109 @@ Finally, we are going to take the exam. In the exam, we need to grab specific kn
     <span class="n">m</span><span class="o">.</span><span class="n">update_state</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">actual_pred</span><span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">actual_pred</span><span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">]))</span>
     
     <span class="k">return</span> <span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">result</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">actual_pred</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="p">)</span>
-    
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">LSTM_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">sc</span><span class="p">):</span>
-    <span class="c1"># create a model</span>
-    <span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
-    <span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">SimpleRNN</span><span class="p">,</span> <span class="n">GRU</span><span class="p">,</span> <span class="n">LSTM</span>
-    <span class="kn">from</span> <span class="nn">keras.optimizers</span> <span class="kn">import</span> <span class="n">SGD</span>
-    
-    <span class="c1"># The LSTM architecture</span>
-    <span class="n">my_LSTM_model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
-    <span class="n">my_LSTM_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">))</span>
-    <span class="n">my_LSTM_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">))</span>
-    <span class="n">my_LSTM_model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-
-    <span class="c1"># Compiling</span>
-    <span class="n">my_LSTM_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">SGD</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">nesterov</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
-    <span class="c1"># Fitting to the training set</span>
-    <span class="n">my_LSTM_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-    <span class="n">LSTM_prediction</span> <span class="o">=</span> <span class="n">my_LSTM_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-    <span class="n">LSTM_prediction</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">LSTM_prediction</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">my_LSTM_model</span><span class="p">,</span> <span class="n">LSTM_prediction</span>
-
-
-<span class="n">my_LSTM_model</span><span class="p">,</span> <span class="n">LSTM_prediction</span> <span class="o">=</span> <span class="n">LSTM_model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">sc</span><span class="p">)</span>
-<span class="n">actual_pred_plot</span><span class="p">(</span><span class="n">LSTM_prediction</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span> <span class="o">=</span> <span class="n">Y_test_pred</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">actual_pred_plot</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/dist-packages/keras/optimizers/legacy/gradient_descent.py:114: UserWarning: The `lr` argument is deprecated, use `learning_rate` instead.
-  super().__init__(name, **kwargs)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(374.85776, &lt;Axes: xlabel=&#39;Date&#39;&gt;)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34/34 [==============================] - 1s 2ms/step
+<img alt="_images/666e4ba2ab4e615e268ba90ed21015c7349bf88989cbd30b00f12d915dfd27a2.png" src="_images/666e4ba2ab4e615e268ba90ed21015c7349bf88989cbd30b00f12d915dfd27a2.png" />
+</div>
+</div>
+</section>
+<section id="model-interpretation">
+<h2>Model Interpretation<a class="headerlink" href="#model-interpretation" title="Permalink to this heading">#</a></h2>
+<p>LSTM is not a interpretable model, so I am going to use SHAP(SHapley Additive exPlanations) to approximate the contributions of each feature to the model’s predictions for this model and data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>shap
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(501.4106, &lt;Axes: xlabel=&#39;Date&#39;&gt;)
-</pre></div>
-</div>
-<img alt="_images/b8fa51bf1d7d50954bb8920d950ab77728cf5e8484825485d8b50857aa68b775.png" src="_images/b8fa51bf1d7d50954bb8920d950ab77728cf5e8484825485d8b50857aa68b775.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LSTM_prediction</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">shap</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lstm_flatten_input</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="n">n_samples</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">X_flat</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">X_flat</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train_flat</span> <span class="o">=</span> <span class="n">lstm_flatten_input</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test_flat</span> <span class="o">=</span> <span class="n">lstm_flatten_input</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">model_wrapper</span><span class="p">(</span><span class="n">X_flat</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">X_flat</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">lookback</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">explainer</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">KernelExplainer</span><span class="p">(</span><span class="n">model_wrapper</span><span class="p">,</span> <span class="n">X_train_flat</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[44.33528 , 45.61733 ],
-       [44.03457 , 45.28942 ],
-       [44.087112, 45.33005 ],
-       ...,
-       [82.689186, 86.69119 ],
-       [82.15135 , 86.11352 ],
-       [81.55466 , 85.46417 ]], dtype=float32)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4/4 [==============================] - 0s 3ms/step
 </pre></div>
 </div>
 </div>
 </div>
-<p>The prediction looks great, BUT that is because every predictions I made was based on real data, not the predicted data.</p>
-<p>If I want to predict the stock without the real data (we cannot get real data for stock in future), I need to use the Recursive Multi-step Forecast Strategy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># predict with the test data</span>
-<span class="n">input_sequence</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">time_step_in</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="c1"># Initialize an empty list to store predictions</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)):</span>
-    <span class="c1"># Predict the next time_step_out points using the current input_sequence</span>
-    <span class="n">pred</span> <span class="o">=</span> <span class="n">my_LSTM_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_sequence</span><span class="p">)</span>
-    
-    <span class="c1"># Add the predicted points to the predictions list</span>
-    <span class="n">predictions</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">pred</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    
-    <span class="c1"># Update the input_sequence by adding the predicted points and removing the first time_step_out points</span>
-    <span class="n">input_sequence</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">input_sequence</span><span class="p">,</span> <span class="o">-</span><span class="n">time_step_out</span><span class="p">)</span>
-    <span class="n">input_sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">time_step_out</span><span class="p">:]</span> <span class="o">=</span> <span class="n">pred</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Inverse transform the predictions</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute SHAP values for the test data</span>
+<span class="n">shap_values</span> <span class="o">=</span> <span class="n">explainer</span><span class="o">.</span><span class="n">shap_values</span><span class="p">(</span><span class="n">X_test_flat</span><span class="p">,</span> <span class="n">nsamples</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">shap_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">shap_values</span><span class="p">)</span>
+<span class="n">shap_values</span> <span class="o">=</span> <span class="n">shap_values</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">lookback</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">mean_shap_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">shap_values</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span> <span class="s1">&#39;Volume&#39;</span><span class="p">,</span> <span class="s1">&#39;CPI&#39;</span><span class="p">,</span> <span class="s1">&#39;Core CPI&#39;</span><span class="p">,</span> <span class="s1">&#39;gdp&#39;</span><span class="p">,</span> <span class="s1">&#39;Unemployment_rate&#39;</span><span class="p">,</span> <span class="s1">&#39;m1&#39;</span><span class="p">,</span> <span class="s1">&#39;DFF&#39;</span><span class="p">,</span> <span class="s1">&#39;M2&#39;</span><span class="p">]</span>
+<span class="n">y_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">features</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">y_pos</span><span class="p">,</span> <span class="n">mean_shap_values</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">y_pos</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Mean SHAP Value&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Feature Importance&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/44722aa65c9b51e33591838cee65b0df2e4a3247a422e3b8704e05e97bd8c16b.png" src="_images/44722aa65c9b51e33591838cee65b0df2e4a3247a422e3b8704e05e97bd8c16b.png" />
+</div>
+</div>
+<p>According to the plot: M2, previous stock price, and GDP are the top three features correlated with future stock prices. On the other hand, CPI, unemployment rate and federal funds rate are not significant variables to predict the Google stock price.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="conclusion">
+<h1>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h1>
+<p>LSTM fits the data better than SARIMAX and Linear Regression. That is because LSTM used both previous stock price and other features to make predictions, while LR does not focus on the correlation between nearby stock price and SARIMAX focus more on the correlations.</p>
+<p>However, LSTM is still far from perfect, future adjustments are needed to improve the fit.</p>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">https://colah.github.io/posts/2015-08-Understanding-LSTMs/</a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -781,13 +873,22 @@ Finally, we are going to take the exam. In the exam, we need to grab specific kn
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="RNN_update.html"
+       href="SARIMAX.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Model2 RNN</p>
+        <p class="prev-next-title">Model2</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="reflections.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Reflections</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -799,6 +900,29 @@ Finally, we are going to take the exam. In the exam, we need to grab specific kn
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Model3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-short-term-memory">Long Short-Term Memory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-interpretation">Model Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -808,7 +932,7 @@ Finally, we are going to take the exam. In the exam, we need to grab specific kn
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Jinghan Huang
 </p>
 
   </div>
