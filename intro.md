@@ -1,5 +1,13 @@
+# Final Project
+# Predicting Google Stock Price
 
-# Proposal
+by Jinghan Huang
+
+2023-04-30
+
+
+
+## Proposal:
 
 ## Introduction:
 
